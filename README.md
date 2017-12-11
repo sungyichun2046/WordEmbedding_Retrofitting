@@ -1,43 +1,52 @@
-    Ce projet consiste à implémenter la méthode « retrofitting » basée sur un graphe, pour utiliser la relation 
-sémantique entre les mots, afin d’améliorer la performance des vecteurs de lexiques.
-    
-    L'algorithme est évalué sur une tâche de similarité lexicale, puis sur une tâche d'analyse de sentiments sur
-un corpus de critiques de films. 
+# WordEmbedding Retrofitting
 
-    
+## Description
 
-REQUIRED FILES
+    This project is to implement the method « retrofitting » which use semantic relationship between pairs of words, for improving performance of word vectors. This algorithm is evaluated on two tasks : 
+    - semantic similarity between words (for english word vectors)
+    - opinion mining on movie reviews (for french word vectors)
 
--Vecteurs de mots:
- FR: vectos50
- EN: vectors_datatxt_250_sg_w10_i5_c500_gensim_clean
+## Organization of files
 
+  -Vectors of words:
+  
+    FR:  `vectos50` 
+          (https://dl.dropboxusercontent.com/u/108240016/vectors50.bz2)
+    EN:  `vectors_datatxt_250_sg_w10_i5_c500_gensim_clean` 
+          (https://dl.dropboxusercontent.com/u/108240016/vectors_datatxt_250_sg_w10_i5_c500_gensim_clean.tar.bz2)
 
--Ressources sémantiques:
+  -Semantic relation:
 
- EN: PPDB data, ppdb-1.0-xl-lexical (PPDB, paraphrase database)
- FR: wolf-1.0b4.xml (WOLF)
+    EN: `ppdb-1.0-xl-lexical`
+         (http://www.cis.upenn.edu/~ccb/ppdb/release-1.0/ppdb-1.0-xl-lexical.gz)   
+    FR: `wolf-1.0b4.xml`
+         (https://gforge.inria.fr/frs/download.php/file/33496/wolf-1.0b4.xml.bz2)
 
--Pour l'évaluation:
+  -Evaluation:
 
- EN (similarité lexicale) : ws353.txt
- FR (corpus d'analyse de sentiments) : rg65_french.txt
-     Pour entraîner un Perceptron (classifieur) : stanford_raw_dev.txt
-                                                  stanford_raw_test.txt
-                                                  stanford_raw_train.txt
+    EN: `ws353.txt`
+    FR: `rg65_french.txt`
 
+  -Data for training a perceptron classifier 
 
-USAGE
+    -`stanford_raw_dev.txt`
+    -`stanford_raw_test.txt`
+    -`stanford_raw_train.txt`
 
-javac -cp commons-math3-3.6.1.jar:. Retrofitting.java
+## How to test
 
-java -cp commons-math3-3.6.1.jar:. Retrofitting fr 5 50
-(utiliser retrofitting avec des vecteurs de mots en français de dimension 50)
+    - run `javac -cp commons-math3-3.6.1.jar:. Retrofitting.java`
 
-java -cp commons-math3-3.6.1.jar:. Retrofitting en 5 150
-(utiliser retrofitting avec des vecteurs de mots en anglais de dimension 150)
+    - run `java -cp commons-math3-3.6.1.jar:. Retrofitting fr 5 50` 
+      (use retrofitting with vectors of words for french of dimension 50)
 
-RÉFÉRENCE
-Retrofitting Word Vectors to Semantic Lexicons https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf
+    - run `java -cp commons-math3-3.6.1.jar:. Retrofitting en 5 150` 
+      (use retrofitting with vectors of words for english of dimension 150)
 
-MEMBRES DU PROJET:YI CHUN SUNG / HERMES MARTINEZ
+## What needs to be done
+
+    - change values if parameters α, β in algorithm
+
+## Reference
+
+    - Retrofitting Word Vectors to Semantic Lexicons https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf
