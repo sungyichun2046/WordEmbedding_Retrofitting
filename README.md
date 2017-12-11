@@ -2,7 +2,8 @@
 
 ## Description
 
-    This project is to implement the method « retrofitting » which use semantic relationship between pairs of words, for improving performance of word vectors. This algorithm is evaluated on two tasks : 
+    This project is to implement the method « retrofitting » which use semantic relationship between pairs of words, for    
+    improving performance of word vectors. This algorithm is evaluated on two tasks : 
     - semantic similarity between words (for english word vectors)
     - opinion mining on movie reviews (for french word vectors)
 
@@ -45,8 +46,9 @@
 
 ## What needs to be done
 
-    - change values if parameters α, β in algorithm
+    - change values of parameters α, β in algorithm
 
 ## Reference
 
-    - Retrofitting Word Vectors to Semantic Lexicons https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf
+    - Retrofitting Word Vectors to Semantic Lexicons: 
+      https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf
